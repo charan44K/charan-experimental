@@ -172,13 +172,29 @@
         main {
             margin-top: 20px;
             display: grid;
-            grid-template-columns: minmax(0, 1fr);
+            grid-template-columns: 1fr 420px;
+            gap: 20px;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
             gap: 18px;
         }
 
         @media (max-width: 1024px) {
             main {
                 grid-template-columns: minmax(0, 1fr);
+            }
+
+            .sidebar {
+                order: 2;
             }
 
             header {
@@ -470,8 +486,8 @@
         </header>
 
         <main>
-            <!-- Left column: Summary + Experience -->
-            <section>
+            <!-- Main Content: Summary + Experience -->
+            <div class="main-content">
                 <div class="card" id="summary">
                     <h2>Summary</h2>
                     <p class="summary-text">
@@ -755,138 +771,145 @@
                         </ul>
                     </div>
                 </div>
-            </section>
+            </div>
+    </div>
 
-            <!-- Right column: Skills, Education, Achievements -->
-            <section>
-                <div class="card" id="skills">
-                    <h2>Skills</h2>
-                    <div class="skill-block">
-                        <strong>Product</strong><br />
-                        Strategy, roadmapping, user research, UX flows, PRDs, metrics design, A/B testing,
-                        product lifecycle management, stakeholder management, Figma, Mixpanel.
-                    </div>
-                    <div class="skill-block">
-                        <strong>AI</strong><br />
-                        LLM orchestration, LangChain, LangGraph, RAG, Model Context Protocol (MCP),
-                        model evaluation, STT/LLM/TTS pipelines, prompt design, n8n.
-                    </div>
-                    <div class="skill-block">
-                        <strong>Engineering</strong><br />
-                        Golang, Node.js, Python, Ruby on Rails, Kafka, Docker, Kubernetes, microservices,
-                        MySQL, PostgreSQL, MongoDB, Pinecone.
-                    </div>
-                    <div class="badge-row">
-                        <span class="badge">AI-native PM</span>
-                        <span class="badge">Ex-SDE Tech Lead</span>
-                        <span class="badge">0→1 Builder</span>
-                    </div>
-                </div>
+    <!-- Sidebar: Skills, Education, Blog, Highlights -->
+    <div class="sidebar">
+        <div class="card" id="skills">
+            <h2>Skills</h2>
+            <div class="skill-block">
+                <strong>Product</strong><br />
+                Strategy, roadmapping, user research, UX flows, PRDs, metrics design, A/B testing,
+                product lifecycle management, stakeholder management, Figma, Mixpanel.
+            </div>
+            <div class="skill-block">
+                <strong>AI</strong><br />
+                LLM orchestration, LangChain, LangGraph, RAG, Model Context Protocol (MCP),
+                model evaluation, STT/LLM/TTS pipelines, prompt design, n8n.
+            </div>
+            <div class="skill-block">
+                <strong>Engineering</strong><br />
+                Golang, Node.js, Python, Ruby on Rails, Kafka, Docker, Kubernetes, microservices,
+                MySQL, PostgreSQL, MongoDB, Pinecone.
+            </div>
+            <div class="badge-row">
+                <span class="badge">AI-native PM</span>
+                <span class="badge">Ex-SDE Tech Lead</span>
+                <span class="badge">0→1 Builder</span>
+            </div>
+        </div>
 
-                <div class="card section-spacer">
-                    <h2>Education</h2>
-                    <div class="edu-main">
-                        Bachelors (Honours), Architecture
+        <div class="card section-spacer">
+            <h2>Education</h2>
+            <div class="edu-main">
+                Bachelors (Honours), Architecture
+            </div>
+            <div class="edu-line">
+                Indian Institute of Technology Kharagpur · 2021
+            </div>
+            <div class="edu-line">
+                Undergrad thesis: acoustic-optimized spaces for performing arts using computational design
+                and acoustic simulation principles; recognised as one of the top theses in the cohort.
+            </div>
+        </div>
+
+        <div class="card section-spacer" id="achievements">
+            <h2>Highlights</h2>
+            <ul class="side-list">
+                <li>
+                    Excellence Award at Vegrow for building a scalable GenAI-powered NPS AI calling platform
+                    that
+                    reduced operational costs by ~35%.
+                </li>
+                <li>
+                    Invited to the Google Foobar Challenge for technical excellence and algorithmic problem
+                    solving.
+                </li>
+                <li>
+                    Recognised for innovation with design awards (HHAC 2018, Arth Design Build 2017).
+                </li>
+                <li>
+                    Organised a company-wide Hackathon at Vegrow with ~95% participation to foster a culture
+                    of
+                    innovation and experimentation.
+                </li>
+            </ul>
+        </div>
+
+        <div class="card section-spacer" id="blog">
+            <h2>Featured Writing</h2>
+            <div class="blog-grid">
+                <a href="https://medium.com/design-bootcamp/from-ui-to-agentic-ux-how-ai-agents-are-redefining-saas-experiences-bcc8e24751d2"
+                    target="_blank" rel="noreferrer" class="blog-card">
+                    <div class="blog-title">From UI to Agentic UX: How AI Agents Are Redefining SaaS
+                        Experiences
                     </div>
-                    <div class="edu-line">
-                        Indian Institute of Technology Kharagpur · 2021
+                    <div class="blog-excerpt">
+                        Exploring how AI agents are transforming traditional user interfaces into
+                        intelligent,
+                        autonomous experiences in modern SaaS applications.
                     </div>
-                    <div class="edu-line">
-                        Undergrad thesis: acoustic-optimized spaces for performing arts using computational design
-                        and acoustic simulation principles; recognised as one of the top theses in the cohort.
+                    <div class="blog-meta">
+                        <span>📝 6 min read</span>
+                        <span>·</span>
+                        <span>AI & UX</span>
                     </div>
-                </div>
+                </a>
 
-                <div class="card section-spacer" id="achievements">
-                    <h2>Highlights</h2>
-                    <ul class="side-list">
-                        <li>
-                            Excellence Award at Vegrow for building a scalable GenAI-powered NPS AI calling platform
-                            that
-                            reduced operational costs by ~35%.
-                        </li>
-                        <li>
-                            Invited to the Google Foobar Challenge for technical excellence and algorithmic problem
-                            solving.
-                        </li>
-                        <li>
-                            Recognised for innovation with design awards (HHAC 2018, Arth Design Build 2017).
-                        </li>
-                        <li>
-                            Organised a company-wide Hackathon at Vegrow with ~95% participation to foster a culture of
-                            innovation and experimentation.
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="card section-spacer" id="blog">
-                    <h2>Featured Writing</h2>
-                    <div class="blog-grid">
-                        <a href="https://medium.com/design-bootcamp/from-ui-to-agentic-ux-how-ai-agents-are-redefining-saas-experiences-bcc8e24751d2"
-                            target="_blank" rel="noreferrer" class="blog-card">
-                            <div class="blog-title">From UI to Agentic UX: How AI Agents Are Redefining SaaS Experiences
-                            </div>
-                            <div class="blog-excerpt">
-                                Exploring how AI agents are transforming traditional user interfaces into intelligent,
-                                autonomous experiences in modern SaaS applications.
-                            </div>
-                            <div class="blog-meta">
-                                <span>📝 6 min read</span>
-                                <span>·</span>
-                                <span>AI & UX</span>
-                            </div>
-                        </a>
-
-                        <a href="https://saicharankummetha.medium.com/exploring-otp-service-implementation-with-golang-a-system-design-overview-02a53b11d08c"
-                            target="_blank" rel="noreferrer" class="blog-card">
-                            <div class="blog-title">Exploring OTP Service Implementation with Golang: A System Design
-                                Overview</div>
-                            <div class="blog-excerpt">
-                                Deep dive into building a scalable OTP service using Golang, covering architecture,
-                                security considerations, and implementation patterns.
-                            </div>
-                            <div class="blog-meta">
-                                <span>📝 8 min read</span>
-                                <span>·</span>
-                                <span>System Design</span>
-                            </div>
-                        </a>
-
-                        <a href="https://blog.startupstash.com/experience-vs-data-the-new-moat-for-startups-b030a3093272"
-                            target="_blank" rel="noreferrer" class="blog-card">
-                            <div class="blog-title">Experience vs Data: The New Moat for Startups</div>
-                            <div class="blog-excerpt">
-                                Why exceptional user experience combined with proprietary data creates the strongest
-                                competitive advantage for modern startups.
-                            </div>
-                            <div class="blog-meta">
-                                <span>📝 5 min read</span>
-                                <span>·</span>
-                                <span>Product Strategy</span>
-                            </div>
-                        </a>
-
-                        <a href="https://saicharankummetha.medium.com/be-a-leader-essential-traits-for-thriving-based-on-my-experiences-8fda8d2e3f33"
-                            target="_blank" rel="noreferrer" class="blog-card">
-                            <div class="blog-title">Be a Leader: Essential Traits for Thriving</div>
-                            <div class="blog-excerpt">
-                                Personal reflections on leadership qualities that drive success, based on experiences
-                                leading engineering and product teams.
-                            </div>
-                            <div class="blog-meta">
-                                <span>📝 6 min read</span>
-                                <span>·</span>
-                                <span>Leadership</span>
-                            </div>
-                        </a>
+                <a href="https://saicharankummetha.medium.com/exploring-otp-service-implementation-with-golang-a-system-design-overview-02a53b11d08c"
+                    target="_blank" rel="noreferrer" class="blog-card">
+                    <div class="blog-title">Exploring OTP Service Implementation with Golang: A System
+                        Design
+                        Overview</div>
+                    <div class="blog-excerpt">
+                        Deep dive into building a scalable OTP service using Golang, covering architecture,
+                        security considerations, and implementation patterns.
                     </div>
-                </div>
-            </section>
-        </main>
+                    <div class="blog-meta">
+                        <span>📝 8 min read</span>
+                        <span>·</span>
+                        <span>System Design</span>
+                    </div>
+                </a>
 
-        <footer>
-            © <span id="year"></span> Kummetha Sai Charan · Minimal, fast personal page.
-        </footer>
+                <a href="https://blog.startupstash.com/experience-vs-data-the-new-moat-for-startups-b030a3093272"
+                    target="_blank" rel="noreferrer" class="blog-card">
+                    <div class="blog-title">Experience vs Data: The New Moat for Startups</div>
+                    <div class="blog-excerpt">
+                        Why exceptional user experience combined with proprietary data creates the strongest
+                        competitive advantage for modern startups.
+                    </div>
+                    <div class="blog-meta">
+                        <span>📝 5 min read</span>
+                        <span>·</span>
+                        <span>Product Strategy</span>
+                    </div>
+                </a>
+
+                <a href="https://saicharankummetha.medium.com/be-a-leader-essential-traits-for-thriving-based-on-my-experiences-8fda8d2e3f33"
+                    target="_blank" rel="noreferrer" class="blog-card">
+                    <div class="blog-title">Be a Leader: Essential Traits for Thriving</div>
+                    <div class="blog-excerpt">
+                        Personal reflections on leadership qualities that drive success, based on
+                        experiences
+                        leading engineering and product teams.
+                    </div>
+                    <div class="blog-meta">
+                        <span>📝 6 min read</span>
+                        <span>·</span>
+                        <span>Leadership</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    </main>
+
+    <footer>
+        © <span id="year"></span> Kummetha Sai Charan · Minimal, fast personal page.
+    </footer>
     </div>
 
     <script>
