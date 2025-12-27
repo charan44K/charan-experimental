@@ -327,6 +327,58 @@
             color: var(--text-muted);
         }
 
+        .blog-grid {
+            display: grid;
+            gap: 14px;
+            margin-top: 12px;
+        }
+
+        .blog-card {
+            padding: 16px 18px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-subtle);
+            background: #fafafa;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .blog-card:hover {
+            border-color: var(--accent);
+            background: var(--accent-soft);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        }
+
+        .blog-title {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin: 0 0 6px;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0 0 8px;
+        }
+
+        .blog-meta {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
         footer {
             margin-top: 22px;
             font-size: 0.8rem;
@@ -348,6 +400,7 @@
                     <a href="#summary">Summary</a>
                     <a href="#experience">Experience</a>
                     <a href="#skills">Skills</a>
+                    <a href="#blog">Blog</a>
                     <a href="#achievements">Highlights</a>
                 </nav>
             </div>
@@ -714,6 +767,69 @@
                             innovation and experimentation.
                         </li>
                     </ul>
+                </div>
+
+                <div class="card section-spacer" id="blog">
+                    <h2>Featured Writing</h2>
+                    <div class="blog-grid">
+                        <a href="https://medium.com/design-bootcamp/from-ui-to-agentic-ux-how-ai-agents-are-redefining-saas-experiences-bcc8e24751d2"
+                            target="_blank" rel="noreferrer" class="blog-card">
+                            <div class="blog-title">From UI to Agentic UX: How AI Agents Are Redefining SaaS Experiences
+                            </div>
+                            <div class="blog-excerpt">
+                                Exploring how AI agents are transforming traditional user interfaces into intelligent,
+                                autonomous experiences in modern SaaS applications.
+                            </div>
+                            <div class="blog-meta">
+                                <span>📝 6 min read</span>
+                                <span>·</span>
+                                <span>AI & UX</span>
+                            </div>
+                        </a>
+
+                        <a href="https://saicharankummetha.medium.com/exploring-otp-service-implementation-with-golang-a-system-design-overview-02a53b11d08c"
+                            target="_blank" rel="noreferrer" class="blog-card">
+                            <div class="blog-title">Exploring OTP Service Implementation with Golang: A System Design
+                                Overview</div>
+                            <div class="blog-excerpt">
+                                Deep dive into building a scalable OTP service using Golang, covering architecture,
+                                security considerations, and implementation patterns.
+                            </div>
+                            <div class="blog-meta">
+                                <span>📝 8 min read</span>
+                                <span>·</span>
+                                <span>System Design</span>
+                            </div>
+                        </a>
+
+                        <a href="https://blog.startupstash.com/experience-vs-data-the-new-moat-for-startups-b030a3093272"
+                            target="_blank" rel="noreferrer" class="blog-card">
+                            <div class="blog-title">Experience vs Data: The New Moat for Startups</div>
+                            <div class="blog-excerpt">
+                                Why exceptional user experience combined with proprietary data creates the strongest
+                                competitive advantage for modern startups.
+                            </div>
+                            <div class="blog-meta">
+                                <span>📝 5 min read</span>
+                                <span>·</span>
+                                <span>Product Strategy</span>
+                            </div>
+                        </a>
+
+                        <a href="https://saicharankummetha.medium.com/be-a-leader-essential-traits-for-thriving-based-on-my-experiences-8fda8d2e3f33"
+                            target="_blank" rel="noreferrer" class="blog-card">
+                            <div class="blog-title">Be a Leader: Essential Traits for Thriving</div>
+                            <div class="blog-excerpt">
+                                Personal reflections on leadership qualities that drive success, based on experiences
+                                leading engineering and product teams.
+                            </div>
+                            <div class="blog-meta">
+                                <span>📝 6 min read</span>
+                                <span>·</span>
+                                <span>Leadership</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </section>
         </main>
