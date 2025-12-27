@@ -89,6 +89,21 @@
             font-weight: 400;
         }
 
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .profile-image {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--border-subtle);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
         nav {
             display: flex;
             flex-wrap: wrap;
@@ -392,9 +407,12 @@
     <div class="page">
         <header>
             <div class="top-row">
-                <div class="name-block">
-                    <h1>Kummetha Sai Charan</h1>
-                    <p>Product Manager · AI Platforms & Automation · IIT Kharagpur</p>
+                <div class="profile-section">
+                    <img src="profile.jpg" alt="Kummetha Sai Charan" class="profile-image">
+                    <div class="name-block">
+                        <h1>Kummetha Sai Charan</h1>
+                        <p>Product Manager · AI Platforms & Automation · IIT Kharagpur</p>
+                    </div>
                 </div>
                 <nav>
                     <a href="#summary">Summary</a>
